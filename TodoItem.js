@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react';
 import { MdDelete, MdEdit } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { deleteTodo, updateTodo } from '../slices/todoSlice';
-import styles from '../styles/modules/todoItem.module.scss';
 import { getClasses } from '../utils/getClasses';
 import CheckButton from './CheckButton';
 import TodoModal from './TodoModal';
@@ -49,26 +48,26 @@ function TodoItem({ todo }) {
 
   return (
     <>
-      <motion.div className={styles.item} variants={child}>
-        <div className={styles.todoDetails}>
+      <motion.div className="item" variants={child}>
+        <div className={'todoDetails'}>
           <CheckButton checked={checked} handleCheck={handleCheck} />
-          <div className={styles.texts}>
+          <div className={'texts'}>
             <p
               className={getClasses([
-                styles.todoText,
-                todo.status === 'complete' && styles['todoText--completed'],
+               'todoText',
+                todo.status === 'complete' && ['todoText--completed'],
               ])}
             >
               {todo.title}
             </p>
-            <p className={styles.time}>
+            <p className="time">
               {format(new Date(todo.time), 'p, MM/dd/yyyy')}
             </p>
           </div>
         </div>
-        <div className={styles.todoActions}>
+        <div className="todoActions">
           <div
-            className={styles.icon}
+            className={'icon'}
             onClick={() => handleDelete()}
             onKeyDown={() => handleDelete()}
             tabIndex={0}
@@ -77,7 +76,7 @@ function TodoItem({ todo }) {
             <MdDelete />
           </div>
           <div
-            className={styles.icon}
+            className="icon"
             onClick={() => handleUpdate()}
             onKeyDown={() => handleUpdate()}
             tabIndex={0}
