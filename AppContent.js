@@ -1,7 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styles from '../styles/modules/app.module.scss';
 import TodoItem from './TodoItem';
 
 const container = {
@@ -38,7 +37,7 @@ function AppContent() {
 
   return (
     <motion.div
-      className={styles.content__wrapper}
+      className="content__wrapper"
       variants={container}
       initial="hidden"
       animate="visible"
@@ -51,7 +50,7 @@ function AppContent() {
             // </motion.div>
           ))
         ) : (
-          <motion.p variants={child} className={styles.emptyText}>
+          <motion.p variants={child} className="emptyText">
             No Todos
           </motion.p>
         )}
