@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 import { format } from 'date-fns';
 import { addTodo, updateTodo } from '../slices/todoSlice';
-import styles from '../styles/modules/modal.module.scss';
 import Button from './Button';
 
 const dropIn = {
@@ -80,20 +79,20 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
     <AnimatePresence>
       {modalOpen && (
         <motion.div
-          className={styles.wrapper}
+          className={'wrapper'}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className={styles.container}
+            className={'container'}
             variants={dropIn}
             initial="hidden"
             animate="visible"
             exit="exit"
           >
             <motion.div
-              className={styles.closeButton}
+              className={'closeButton'}
               onKeyDown={() => setModalOpen(false)}
               onClick={() => setModalOpen(false)}
               role="button"
@@ -106,8 +105,8 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
               <MdOutlineClose />
             </motion.div>
 
-            <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
-              <h1 className={styles.formTitle}>
+            <form className="form" onSubmit={(e) => handleSubmit(e)}>
+              <h1 className="formTitle">
                 {type === 'add' ? 'Add' : 'Update'} TODO
               </h1>
               <label htmlFor="title">
@@ -130,7 +129,7 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
                   <option value="complete">Completed</option>
                 </select>
               </label>
-              <div className={styles.buttonContainer}>
+              <div className="buttonContainer">
                 <Button type="submit" variant="primary">
                   {type === 'add' ? 'Add Task' : 'Update Task'}
                 </Button>
