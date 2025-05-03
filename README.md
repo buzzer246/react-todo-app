@@ -25,14 +25,10 @@ In the project, we will be creating a Complete Todo Application with all feature
 
 ```shell
 npm install
+(Or)
+npm i --force
+npm start 
 ```
-
-and after that start the dev server.
-
-```shell
-CMD/react-todo-list=>npm install react-scripts --save (Or)
-CMD/react-todo-list=> npm config set legacy-peer-deps true
-npm start
 
 
 ## License
