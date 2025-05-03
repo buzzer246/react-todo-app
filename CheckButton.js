@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import React from 'react';
-import styles from '../styles/modules/todoItem.module.scss';
+
 
 const checkVariants = {
   initial: {
@@ -25,12 +25,12 @@ function CheckButton({ checked, handleCheck }) {
   return (
     <motion.div
       animate={checked ? 'checked' : 'unchecked'}
-      className={styles.svgBox}
+      className={'svgBox'}
       variants={boxVariants}
       onClick={() => handleCheck()}
     >
       <motion.svg
-        className={styles.svg}
+        className="svg"
         viewBox="0 0 53 38"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
