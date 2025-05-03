@@ -30,6 +30,7 @@ npm install
 and after that start the dev server.
 
 ```shell
+CMD/react-todo-list=>npm install react-scripts --save (Or)
 CMD/react-todo-list=> npm config set legacy-peer-deps true
 npm start
 
